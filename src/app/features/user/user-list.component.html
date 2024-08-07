@@ -2,34 +2,46 @@
 <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
     <ng-container matColumnDef="name">
         <th mat-header-cell *matHeaderCellDef>
-            name
+            <p>
+                name
+            </p>
         </th>
         <td mat-cell *matCellDef="let user">
-            {{user.name}}
+                {{user.name}}
         </td>
     </ng-container>
     <ng-container matColumnDef="email">
         <th mat-header-cell *matHeaderCellDef>
-            email
+            <p>
+                email
+            </p>
         </th>
         <td mat-cell *matCellDef="let user">
-            {{user.email}}
+            <p>
+                {{user.email}}
+            </p>
         </td>
     </ng-container> 
     <ng-container matColumnDef="age">
         <th mat-header-cell *matHeaderCellDef>
-            age
+            <p class="text-center">
+                age
+            </p>
         </th>
         <td mat-cell *matCellDef="let user">
-            {{user.age}}
+            <p>
+                {{user.age}}
+            </p>
         </td>
     </ng-container>
     <ng-container matColumnDef="action">
         <th mat-header-cell *matHeaderCellDef>
-            action
+            <p class="text-center">
+                action
+            </p>
         </th>
         <td mat-cell *matCellDef="let user">
-            <button mat-flat-button [matMenuTriggerFor]="menu" color="primary">
+            <button [matMenuTriggerFor]="menu" class="flex text-center text-sm font-semibold text-white shadow-sm bg-indigo-600 px-6 py-1.5 leading-6">
                 Action
                 <mat-icon iconPositionEnd aria-hidden="false" fontIcon="keyboard_arrow_down">
                 </mat-icon>

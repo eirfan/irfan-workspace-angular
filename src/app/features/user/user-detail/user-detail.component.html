@@ -1,13 +1,70 @@
 <section>
-   
-    <mat-card>
+    <mat-card appearance="outlined" style="width:40vw">
         <mat-card-content>
-            <mat-form-field appearance="fill">
-                <mat-label>
-                    Name
-                </mat-label>
-                <input matInput placeholder="Placeholder">
-            </mat-form-field>
+            <div class="
+            flex min-h-full flex-col justify-center px-6 py-12 lg:px-8">
+            <!-- Header and titl -->
+             <div class="sm:mx-auto sm:w-full sm:max-w-sm">
+                 <h1 class="mt-2 text-center text-2xl font-bold leading-9">
+                     User Detail    
+                 </h1>
+             </div>
+             
+             <div class="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
+                 <form class="space-y-6" [formGroup]="userForm" (ngSubmit)="onSubmit()">
+                     <div>
+                         <label for="name" class="block text-sm font-medium leading-6 text-gray-900">
+                             Name
+                         </label>
+                         <div>
+                             <input id="name" name="name" formControlName="name" required 
+                             class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 px-2" value="{{dataSource.name}}">
+                         </div>
+                     </div>
+
+
+                     <div>
+                        <label for="email" class="block text-sm font-medium leading-6 text-gray-900">
+                            Email
+                        </label>
+                        <div>
+                            <input id="email" name="email" formControlName="email" type="email" required 
+                            class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 px-2" value="{{dataSource.email}}">
+                        </div>
+                    </div>
+                    <div>
+                        <label for="age" class="block text-sm font-medium leading-6 text-gray-900">
+                            Age
+                        </label>
+                        <div>
+                            <input formControlName="age" id="age" name="age" type="number" required 
+                            class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 px-2" value="{{dataSource.age}}">
+                        </div>
+                    </div>
+                    {{isLoadingButton}}
+                    <div>
+                        <button type="submit" class="flex w-full justify-center rounded-md bg-indigo-600 px-6 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm">
+                            @if(isLoadingButton) {
+                                <!-- <svg class="animate-spin text-black bg-black" 
+                                viewBox="0 0 24 24">
+                                </svg> -->
+                                <svg width="20" height="20" fill="currentColor" class="mr-2 animate-spin" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M526 1394q0 53-37.5 90.5t-90.5 37.5q-52 0-90-38t-38-90q0-53 37.5-90.5t90.5-37.5 90.5 37.5 37.5 90.5zm498 206q0 53-37.5 90.5t-90.5 37.5-90.5-37.5-37.5-90.5 37.5-90.5 90.5-37.5 90.5 37.5 37.5 90.5zm-704-704q0 53-37.5 90.5t-90.5 37.5-90.5-37.5-37.5-90.5 37.5-90.5 90.5-37.5 90.5 37.5 37.5 90.5zm1202 498q0 52-38 90t-90 38q-53 0-90.5-37.5t-37.5-90.5 37.5-90.5 90.5-37.5 90.5 37.5 37.5 90.5zm-964-996q0 66-47 113t-113 47-113-47-47-113 47-113 113-47 113 47 47 113zm1170 498q0 53-37.5 90.5t-90.5 37.5-90.5-37.5-37.5-90.5 37.5-90.5 90.5-37.5 90.5 37.5 37.5 90.5zm-640-704q0 80-56 136t-136 56-136-56-56-136 56-136 136-56 136 56 56 136zm530 206q0 93-66 158.5t-158 65.5q-93 0-158.5-65.5t-65.5-158.5q0-92 65.5-158t158.5-66q92 0 158 66t66 158z">
+                                    </path>
+                                </svg>
+                            }
+                            @else {
+                                submit
+                            }
+                        </button>
+                        <button class="flex w-full justify-center rounded-md bg-transparent text-sm font-semibold leading-6  text-red-500 hover:bg-red-500 hover:text-white" 
+                        [routerLink]="['/user-list']">
+                            Cancel
+                    </button>
+                    </div>
+                 </form>
+             </div>
+            </div>
         </mat-card-content>
     </mat-card>
 </section>
