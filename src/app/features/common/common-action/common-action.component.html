@@ -1,0 +1,25 @@
+<div class="floatbutton flex flex-col">
+    <div id="commonActionTop" [ngClass]="{
+        'z-10  bg-black divide-y divide-gray-500 rounded-lg shadow w-44 dark:bg-gray-700':true,
+        'hidden':!isShowingDropdown
+    }" class="">
+        <ul class="text-sm text-gray-700 dark:text-gray-200 " style="background-color:#F4F6FA" aria-labelledby="dropdownTopButton">
+          @for (action of actions; track $index) {
+            <li>
+              <a href="#" href="{{action.route}}" class="block px-4 py-2 hover:bg-indigo-600 dark:hover:bg-gray-600 dark:hover:text-white">{{action.title}}</a>
+            </li>
+
+          }
+        </ul>
+    </div>
+    <div
+      class="grow-0" style="display:flex;justify-content:end">
+      <button id="dropdownTopButton" type="button" (click)="showHideDropdown()" class="text-white bg-indigo-600 hover:bg-indigo-800 rounded-full p-4 "
+      data-dropdown-toggle="commonActionTop" data-dropdown-placement="top">
+          <svg class="w-6 h-6 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14m-7 7V5"/>
+          </svg>
+      </button>
+
+    </div>
+</div>

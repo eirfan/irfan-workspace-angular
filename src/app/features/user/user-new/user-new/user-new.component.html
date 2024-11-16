@@ -6,19 +6,19 @@
             <!-- Header and titl -->
              <div class="sm:mx-auto sm:w-full sm:max-w-sm">
                  <h1 class="mt-2 text-center text-2xl font-bold leading-9">
-                     User Detail    
+                     New User
                  </h1>
              </div>
              
              <div class="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
                  <form class="space-y-6" [formGroup]="userForm" (ngSubmit)="onSubmit()">
-                     <div>
-                         <label for="name" class="block text-sm font-medium leading-6 text-gray-900">
-                             Name
-                         </label>
-                         <div>
+                 <div>
+                     <label for="name" class="block text-sm font-medium leading-6 text-gray-900">
+                         Name
+                        </label>
+                        <div>
                              <input id="name" name="name" formControlName="name" required 
-                             class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 px-2" value="{{dataSource.name}}">
+                             class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 px-2" >
                          </div>
                      </div>
 
@@ -29,7 +29,7 @@
                         </label>
                         <div>
                             <input id="email" name="email" formControlName="email" type="email" required 
-                            class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 px-2" value="{{dataSource.email}}">
+                            class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 px-2">
                         </div>
                     </div>
                     <div>
@@ -38,12 +38,21 @@
                         </label>
                         <div>
                             <input formControlName="age" id="age" name="age" type="number" required 
-                            class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 px-2" value="{{dataSource.age}}">
+                            class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 px-2">
                         </div>
                     </div>
                     <div>
+                        <label for="age" class="block text-sm font-medium leading-6 text-gray-900">
+                            Password
+                        </label>
+                        <div>
+                            <input formControlName="password" id="password" name="password" required
+                            class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 px-2" >
+
+                        </div>
+                    </div>
                         <button type="submit" class="flex w-full justify-center rounded-md bg-indigo-600 px-6 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm">
-                            @if(isLoadingButton) {
+                            @if(isloadingButton) {
                                 <!-- <svg class="animate-spin text-black bg-black" 
                                 viewBox="0 0 24 24">
                                 </svg> -->
@@ -56,12 +65,11 @@
                                 submit
                             }
                         </button>
+                    </form>
                         <button class="flex w-full justify-center rounded-md bg-transparent text-sm font-semibold leading-6  text-red-500 hover:bg-red-500 hover:text-white" 
                         [routerLink]="['/user-list']">
-                            Cancel
+                        Cancel
                     </button>
-                    </div>
-                 </form>
              </div>
             </div>
         </mat-card-content>
