@@ -1,0 +1,10 @@
+code {
+    outline:none;
+    direction: ltr;
+    background-color:#1e1e1e;
+    white-space: pre-wrap;
+    color:white;
+}
+::ng-deep span.token.operator {
+    background:none !important;
+  }

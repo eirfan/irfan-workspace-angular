@@ -1,3 +1,5 @@
-<div class="editor-container" id="editor_container">
-
+<div class="grid grid-cols-2 gap-4 p-4">
+    <textarea [(ngModel)]="sqlCode" (ngModelChange)="highlightCode()" class="block  p-4 w-full text-sm text-gray-900 bg-gray-50 rounded border border-gray-300" placeholder="Write code here"></textarea>
+    <code class="language-sql" spellcheck="false" [innerHTML]="highligtedCode || '/*Code appear here*/'" class="p-4 ">
+    </code>
 </div>
