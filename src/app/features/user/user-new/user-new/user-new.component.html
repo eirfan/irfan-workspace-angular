@@ -1,4 +1,4 @@
-<section>
+<section class=" flex justify-center">
     <mat-card appearance="outlined" style="width:40vw">
         <mat-card-content>
             <div class="
@@ -9,7 +9,7 @@
                      New User
                  </h1>
              </div>
-             
+
              <div class="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
                  <form class="space-y-6" [formGroup]="userForm" (ngSubmit)="onSubmit()">
                  <div>
@@ -17,7 +17,7 @@
                          Name
                         </label>
                         <div>
-                             <input id="name" name="name" formControlName="name" required 
+                             <input id="name" name="name" formControlName="name" required
                              class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 px-2" >
                          </div>
                      </div>
@@ -28,7 +28,7 @@
                             Email
                         </label>
                         <div>
-                            <input id="email" name="email" formControlName="email" type="email" required 
+                            <input id="email" name="email" formControlName="email" type="email" required
                             class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 px-2">
                         </div>
                     </div>
@@ -37,7 +37,7 @@
                             Age
                         </label>
                         <div>
-                            <input formControlName="age" id="age" name="age" type="number" required 
+                            <input formControlName="age" id="age" name="age" type="number" required
                             class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 px-2">
                         </div>
                     </div>
@@ -53,7 +53,7 @@
                     </div>
                         <button type="submit" class="flex w-full justify-center rounded-md bg-indigo-600 px-6 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm">
                             @if(isloadingButton) {
-                                <!-- <svg class="animate-spin text-black bg-black" 
+                                <!-- <svg class="animate-spin text-black bg-black"
                                 viewBox="0 0 24 24">
                                 </svg> -->
                                 <svg width="20" height="20" fill="currentColor" class="mr-2 animate-spin" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg">
@@ -66,7 +66,7 @@
                             }
                         </button>
                     </form>
-                        <button class="flex w-full justify-center rounded-md bg-transparent text-sm font-semibold leading-6  text-red-500 hover:bg-red-500 hover:text-white" 
+                        <button class="flex w-full justify-center rounded-md bg-transparent text-sm font-semibold leading-6  text-red-500 hover:bg-red-500 hover:text-white px-6 py-1.5"
                         [routerLink]="['/user-list']">
                         Cancel
                     </button>

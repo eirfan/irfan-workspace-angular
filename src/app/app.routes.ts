@@ -11,16 +11,23 @@ import { app } from '../../server';
 export const routes: Routes = [
     {
         path:'user-list',
-        component: UserListComponent,
+        component: SidebarComponent,
+        children:[
+          {
+            path:"",
+            component:UserListComponent,
+          },
+          {
+            path:'user-list/details/:id',
+            component: UserDetailComponent,
+          },
+          {
+            path:'user-list/new',
+            component:UserNewComponent,
+          },
+        ]
     },
-    {
-        path:'user-list/details/:id',
-        component: UserDetailComponent,
-    },
-    {
-        path:'user-list/new',
-        component:UserNewComponent,
-    },
+
     {
         path:"code-snippet",
         component:SidebarComponent,

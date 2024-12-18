@@ -21,13 +21,13 @@ let user_data: user[] = []
 })
 
 export class UserListComponent implements OnInit {
-    
-    columns: string[] = ['name','email','age','action']; 
+
+    columns: string[] = ['name','email','age','action'];
     dataSource = user_data;
     MatDataSource = new MatTableDataSource<user>(this.dataSource);
     totalItems = 0;
     @ViewChild(MatPaginator) paginator! : MatPaginator;
-    
+
     constructor( private apiService:ApiService,private alertService:AlertService,) {
     }
 
@@ -46,34 +46,43 @@ export class UserListComponent implements OnInit {
             }
         );
     }
+    // User to call the api for pagination
     fetchUser() {
         let pageIndex = this.paginator.pageIndex + 1 ;
         let pageSize = this.paginator.pageSize;
         this.apiService.getData(pageSize,pageIndex).subscribe(
-           
+
             {
                 next:(value) => {
                     this.MatDataSource.data = value;
-                    // this.MatDataSource.data  = value.users;
-                    // this.totalItems = value.totalUser;
-                    // this.paginator.length = this.totalItems;
+
                 },
                 error(err) {
                     console.log(err);
                 },
-               
+
             }
         )
     }
 
     ngOnInit(): void {
         // function executed when the component initialized
-        
+
     }
     ngAfterViewInit() {
-        this.paginator.pageSize = 5;
-        this.MatDataSource.paginator = this.paginator;
-        this.paginator.page.subscribe(() => this.fetchUser());
-        this.fetchUser()
+      this.paginator.pageSize = 5;
+      this.MatDataSource.paginator = this.paginator;
+      this.paginator.page.subscribe(() => this.fetchUser());
+      // this.fetchUser()
+      let dummyUser: user[] = [
+        {
+          id: 1, name: "irfan hafiz", email: "irfanhafiz329@gmail.com", age: 24
+        },
+        {
+          id: 2, name: "Ali ABu", email: "aliatabu@gmail.com", age: 25
+        },
+      ]
+      this.MatDataSource.data = dummyUser;
     }
+
 }
